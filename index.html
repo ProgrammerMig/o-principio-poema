@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Princípio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+
+        body{
+            background-color: black;
+            overflow-y: hidden;
+        }
+
+        article{
+            background-color: white;
+            background-image: url('https://media.istockphoto.com/id/509799812/pt/foto/livro-branco-textura.jpg?b=1&s=612x612&w=0&k=20&c=-YUOFmkSruwpMYvI1qyrnT6iA9chbLWItbUCRUnAD08=');
+            margin-left: auto;
+            margin-right: auto;
+            width: 420px;
+            height: 600px;
+            border-radius: 30px;
+            
+        }
+
+        div#poema{
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 20px;
+            width: 400px;
+            height: 500px;
+        }
+
+        div#data{
+            font-family: "Handlee", cursive;
+
+
+            width: 160px;
+        }
+
+        div#interaction{
+            color:White;
+
+        }
+
+        p#titulo{
+            font-family: "Handlee", cursive;
+            font-size: 15pt;
+        }
+
+        p#linha{
+            font-family: "Handlee", cursive;
+            font-size: 15pt;
+            
+            border-bottom-color: rgb(103, 103, 255);
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+
+            margin-bottom: -15px;
+        }
+
+        #separador{
+            color:rgb(103, 103, 255);
+            margin-bottom: -10px;
+            white-space: nowrap;
+        }
+
+        span#data-text{
+            border-bottom-color: rgb(103, 103, 255);
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+        }
+
+        #showContent{
+            border-style: none;
+            background-color: black;
+            color: white;
+            width: 100%;
+            height: 680px;
+
+            font-family: "Handjet", cursive;
+            font-size: 80pt;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+
+        .shown {
+            animation-name: showobject;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+
+        div#song-name{
+            font-family: "Handjet", cursive;
+            margin-top: 20px;
+        }
+
+        @keyframes showobject{
+            from{
+                opacity: 0; 
+            } to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <button id="showContent" onclick="showContent()">
+        Clique para mostrar o conteúdo!
+        
+    </button>
+    <article id="poema-geral" class="hidden">
+        
+        <div id="poema">
+            
+            <br>
+            <p id="titulo">
+                <span>
+                    <b>O Princípio</b> ㅤㅤㅤㅤㅤㅤㅤㅤㅤ  <span id="data-text">06 <span id="separador"><b>|</b></span> 05 <span id="separador"><b>|</b></span> 2017</span>
+                </span>
+            </p>
+            <p id="linha">
+                Sentada estava ela.
+            </p>
+            <p id="linha">
+                Tristinha num dia ruim.
+            </p>
+            <p id="linha">
+                Dela enfim me aproximei.
+            </p>
+            <p id="linha">
+                E com ela conversei.
+            </p>
+            <p id="linha">
+                ㅤ
+            </p>
+            <p id="linha">
+                Um amigo ela perdeu.
+            </p>
+            <p id="linha">
+                E ninguém à acolheu!
+            </p>
+            <p id="linha">
+                Um presente eu a oferecí.
+            </p>
+            <p id="linha">
+                E um sorriso recebi.
+            </p>
+            <p id="linha">
+                ㅤ
+            </p>
+            <p id="linha">
+                Letícia era seu nome.
+            </p>
+            <p id="linha">
+                Desde o princípio encantou-me.
+            </p>
+            <p id="linha">
+                E com uma gota de empatia.
+            </p>
+            <p id="linha">
+                Retornou-lhe sua alegria.
+            </p>
+            <div id="song-name">
+                Música: My Confession (slowed+reverb)
+            </div>
+        </div>
+
+    </article>
+
+    <script>
+        poema = document.querySelector('article#poema-geral')
+        button = document.querySelector('button#showContent')
+        sfx = new Audio('pageflip.ogg')
+        song = new Audio('My Confession(slowed+reverb).mp4')
+
+        function showContent(){
+            poema.classList.add('shown')
+            poema.classList.remove('hidden')
+            button.parentElement.removeChild(button)
+            sfx.play('pageflip.ogg')
+            song.play('My Confession(slowed+reverb).mp4')
+        }
+    </script>
+</body>
+</html>
