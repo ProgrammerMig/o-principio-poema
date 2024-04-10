@@ -167,7 +167,7 @@
                 Retornou-lhe sua alegria.
             </p>
             <div id="song-name">
-                Música: My Confession (slowed+reverb)
+                <b>Música: My Confession (slowed+reverb)</b>
             </div>
         </div>
 
@@ -178,6 +178,7 @@
         button = document.querySelector('button#showContent')
         sfx = new Audio('pageflip.ogg')
         song = new Audio('My Confession(slowed+reverb).mp4')
+        song.loop = true;
 
         function showContent(){
             poema.classList.add('shown')
